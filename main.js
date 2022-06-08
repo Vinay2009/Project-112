@@ -1,4 +1,6 @@
-https://teachablemachine.withgoogle.com/models/XYdiNW2R6/model.json
+prediction_1="";
+prediction_2="";
+
 Webcam.set({
     width:350,
     height:300,
@@ -35,7 +37,7 @@ Webcam.set({
     function check()
 {
     img = document.getElementById('captured_image');
-    classifier.classify(img, gotResult);
+    classifier = ml5.imageClassifier("link", modelLoaded);
 }
 
 function gotResult(error, results) {
